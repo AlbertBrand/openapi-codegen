@@ -1,0 +1,42 @@
+{
+  "name": "openapi-codegen",
+  "version": "1.0.0",
+  "description": "OpenAPI code generator",
+  "main": "dist/index.js",
+  "repository": "AlbertBrand/openapi-codegen",
+  "scripts": {
+    "test": "node_modules/.bin/mocha --compilers js:babel-core/register",
+    "cov": "node_modules/.bin/nyc --reporter=text --reporter=lcov npm test",
+    "lint": "node_modules/.bin/eslint .",
+    "flow": "node_modules/.bin/flow check",
+    "build": "node_modules/.bin/babel src --out-dir dist",
+    "prepush": "npm test && npm run lint && npm run flow",
+    "prepublish": "npm run prepush && npm run build"
+  },
+  "keywords": [
+    "OpenAPI",
+    "swagger",
+    "code",
+    "generator",
+    "javascript",
+    "java",
+    "type",
+    "rest"
+  ],
+  "author": "Albert Brand <albert.brand@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "6.10.1",
+    "babel-eslint": "6.0.4",
+    "babel-plugin-transform-class-properties": "6.9.1",
+    "babel-plugin-transform-flow-strip-types": "6.8.0",
+    "babel-preset-es2015": "6.9.0",
+    "eslint": "2.12.0",
+    "eslint-cli": "1.1.0",
+    "eslint-plugin-mocha": "3.0.0",
+    "flow-bin": "0.27.0",
+    "husky": "0.11.4",
+    "mocha": "2.5.3",
+    "nyc": "6.4.4"
+  }
+}
